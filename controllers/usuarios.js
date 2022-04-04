@@ -1,14 +1,27 @@
-const { response } = require('express');
+const { request, response } = require('express');
 
-const usuariosGet = (req, res = response) => {
+const usuariosGet = (req = request, res = response) => {
+    const queryParams = req.query;
+    const { q, nombre = 'No name', apikey, page = 1, limit } = req.query;
+
     res.json({
-        msg: 'get API - controller'
+        msg: 'get API - controller',
+        queryParams,
+        q,
+        nombre,
+        apikey,
+        page,
+        limit
     })
 };
 
 const usuariosPut = (req, res) => {
+
+    const { id } = req.params;
+
     res.json({
-        msg: 'put API - controller'
+        msg: 'put API - controller',
+        id
     })
 }
 
