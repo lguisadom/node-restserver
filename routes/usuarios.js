@@ -1,7 +1,12 @@
 // Rutas relacionadas a los usuarios
 
 const { Router } = require('express');
-const { usuariosGet, usuariosPut, usuariosPost, usuariosDelete, usuariosPatch } = require('../controllers/usuarios');
+const { usuariosGet, 
+    usuariosPut, 
+    usuariosPost, 
+    usuariosDelete, 
+    usuariosPatch } = require('../controllers/usuarios');
+
 const router = Router();
 
 router.get('/', usuariosGet);
