@@ -13,8 +13,15 @@ const usuariosPut = (req, res) => {
 }
 
 const usuariosPost = (req, res) => {
+
+    const body = req.body;
+    const { nombre, edad } = req.body;
+
     res.json({
-        msg: 'post API - controller'
+        msg: 'post API - controller',
+        body,
+        nombre, 
+        edad
     })
 }
 
