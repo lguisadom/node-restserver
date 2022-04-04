@@ -6,6 +6,83 @@
 	},
 	"item": [
 		{
+			"name": "Parámetros de segmento y query",
+			"item": [
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Luis\",\r\n    \"edad\": 35,\r\n    \"id\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/usuarios/101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuarios",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/usuarios?q=hola&nombre=luis&apikey=1234567890&page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "hola"
+								},
+								{
+									"key": "nombre",
+									"value": "luis"
+								},
+								{
+									"key": "apikey",
+									"value": "1234567890"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Get",
 			"request": {
 				"method": "GET",
