@@ -27,10 +27,12 @@ const usuariosPut = (req, res) => {
 }
 
 const usuariosPost = async(req, res) => {
-
-    const body = req.body;
-
-    const usuario = new Usuario( body );
+    /* // Una forma de ignorar al atributo google para que no sea seteado desde el frontend
+    const { google, ...resto } = req.body;
+    const usuario = new Usuario( resto );
+    */
+    const { nombre, correo, password, rol } = req.body;
+    const usuario = new Usuario( { nombre, correo, password, rol} );
     await usuario.save();
 
     res.json({
